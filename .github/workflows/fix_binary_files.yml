@@ -1,0 +1,50 @@
+name: Fix Binary Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix-files:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Download binary files from sandbox
+        run: |
+          mkdir -p source_data
+          curl -fL "https://9001-i411j0yk56ztcf3lfva74.e2b.app/food_price_indices_data_feb-2.xlsx" -o "source_data/food_price_indices_data_feb-2.xlsx"
+          curl -fL "https://9001-i411j0yk56ztcf3lfva74.e2b.app/pmbejd_affordability_2025-2.xlsx" -o "source_data/pmbejd_affordability_2025-2.xlsx"
+          curl -fL "https://9001-i411j0yk56ztcf3lfva74.e2b.app/pmbejd_affordability_extended.xlsx" -o "source_data/pmbejd_affordability_extended.xlsx"
+
+      - name: Verify file sizes
+        run: |
+          ls -la source_data/food_price_indices_data_feb-2.xlsx
+          ls -la source_data/pmbejd_affordability_2025-2.xlsx
+          ls -la source_data/pmbejd_affordability_extended.xlsx
+          FOOD=$(stat -c%s source_data/food_price_indices_data_feb-2.xlsx)
+          P2025=$(stat -c%s source_data/pmbejd_affordability_2025-2.xlsx)
+          PEXT=$(stat -c%s source_data/pmbejd_affordability_extended.xlsx)
+          echo "food_price size: $FOOD (expected 124001)"
+          echo "pmbejd_2025 size: $P2025 (expected 9537)"
+          echo "pmbejd_ext size: $PEXT (expected 9698)"
+          [ "$FOOD" -eq 124001 ] || (echo "ERROR: food_price size mismatch" && exit 1)
+          [ "$P2025" -eq 9537 ] || (echo "ERROR: pmbejd_2025 size mismatch" && exit 1)
+          [ "$PEXT" -eq 9698 ] || (echo "ERROR: pmbejd_ext size mismatch" && exit 1)
+          echo "All sizes verified!"
+
+      - name: Commit and push fixed files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add source_data/food_price_indices_data_feb-2.xlsx
+          git add source_data/pmbejd_affordability_2025-2.xlsx
+          git add source_data/pmbejd_affordability_extended.xlsx
+          git status
+          git diff --cached --stat
+          git commit -m "Fix binary xlsx files - correct binary content (not base64 text)"
+          git push origin main
