@@ -1,1 +1,47 @@
-bmFtZTogUHVzaCBDUEkgc291cmNlIGRhdGEgZmlsZXMKCm9uOgogIHB1c2g6CiAgICBicmFuY2hlczoKICAgICAgLSBtYWluCgpqb2JzOgogIHB1c2gtY3BpLWZpbGVzOgogICAgcnVucy1vbjogdWJ1bnR1LWxhdGVzdAogICAgcGVybWlzc2lvbnM6CiAgICAgIGNvbnRlbnRzOiB3cml0ZQogICAgc3RlcHM6CiAgICAgIC0gbmFtZTogQ2hlY2tvdXQKICAgICAgICB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CgogICAgICAtIG5hbWU6IERvd25sb2FkIENQSSBmaWxlcwogICAgICAgIHJ1bjogfAogICAgICAgICAgbWtkaXIgLXAgc291cmNlX2RhdGEKICAgICAgICAgIGVjaG8gIkRvd25sb2FkaW5nIEZpbGUgMS4uLiIKICAgICAgICAgIGN1cmwgLWZMIC0tbWF4LXRpbWUgNjAgImh0dHBzOi8vODg4OC1pNDExajB5azU2enRjZjNsZnZhNzQuZTJiLmFwcC9maWxlcy93b3Jrc3BhY2UvQ1BJX0F2ZXJhZ2UtUHJpY2VzX0FsbC11cmJhbi0yMDI1MTIueGxzeCIgLW8gc291cmNlX2RhdGEvQ1BJX0F2ZXJhZ2UtUHJpY2VzX0FsbC11cmJhbi0yMDI1MTIueGxzeAogICAgICAgICAgZWNobyAiRmlsZSAxOiAkKHdjIC1jIDwgc291cmNlX2RhdGEvQ1BJX0F2ZXJhZ2UtUHJpY2VzX0FsbC11cmJhbi0yMDI1MTIueGxzeCkgYnl0ZXMiCiAgICAgICAgICBlY2hvICJEb3dubG9hZGluZyBGaWxlIDIuLi4iCiAgICAgICAgICBjdXJsIC1mTCAtLW1heC10aW1lIDYwICJodHRwczovLzg4ODgtaTQxMWoweWs1Nnp0Y2YzbGZ2YTc0LmUyYi5hcHAvZmlsZXMvd29ya3NwYWNlL0VYQ0VMLUNQSS1DT0lDT1AtMjAxOC04ZGlnaXQtMjAyNTEyLnhsc3giIC1vIHNvdXJjZV9kYXRhL0VYQ0VMLUNQSS1DT0lDT1AtMjAxOC04ZGlnaXQtMjAyNTEyLnhsc3gKICAgICAgICAgIGVjaG8gIkZpbGUgMjogJCh3YyAtYyA8IHNvdXJjZV9kYXRhL0VYQ0VMLUNQSS1DT0lDT1AtMjAxOC04ZGlnaXQtMjAyNTEyLnhsc3gpIGJ5dGVzIgoKICAgICAgLSBuYW1lOiBDb21taXQgYW5kIHB1c2gKICAgICAgICBydW46IHwKICAgICAgICAgIGdpdCBjb25maWcgdXNlci5uYW1lICJnaXRodWItYWN0aW9uc1tib3RdIgogICAgICAgICAgZ2l0IGNvbmZpZyB1c2VyLmVtYWlsICJnaXRodWItYWN0aW9uc1tib3RdQHVzZXJzLm5vcmVwbHkuZ2l0aHViLmNvbSIKICAgICAgICAgIGdpdCBhZGQgc291cmNlX2RhdGEvQ1BJX0F2ZXJhZ2UtUHJpY2VzX0FsbC11cmJhbi0yMDI1MTIueGxzeCBzb3VyY2VfZGF0YS9FWENFTC1DUEktQ09JQ09QLTIwMTgtOGRpZ2l0LTIwMjUxMi54bHN4CiAgICAgICAgICBnaXQgZGlmZiAtLXN0YWdlZCAtLXN0YXQKICAgICAgICAgIGdpdCBjb21taXQgLW0gIkFkZCBDUEkgc291cmNlIGRhdGEgZmlsZXMgdmlhIEdpdEh1YiBBY3Rpb25zIFtza2lwIGNpXSIgfHwgZWNobyAiTm8gY2hhbmdlcyB0byBjb21taXQiCiAgICAgICAgICBnaXQgcHVzaAo=
+name: Add CPI source data files
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/push_cpi_files.yml'
+
+jobs:
+  push-cpi-files:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download CPI files from E2B server
+        run: |
+          E2B_BASE="https://8888-i411j0yk56ztcf3lfva74.e2b.app/files/workspace"
+          
+          mkdir -p source_data
+          
+          echo "Downloading CPI_Average-Prices_All-urban-202512.xlsx..."
+          curl -L --max-time 60 \
+            "${E2B_BASE}/CPI_Average-Prices_All-urban-202512.xlsx" \
+            -o source_data/CPI_Average-Prices_All-urban-202512.xlsx
+          
+          echo "File 1 size: $(wc -c < source_data/CPI_Average-Prices_All-urban-202512.xlsx) bytes"
+          
+          echo "Downloading EXCEL-CPI-COICOP-2018-8digit-202512.xlsx..."
+          curl -L --max-time 60 \
+            "${E2B_BASE}/EXCEL-CPI-COICOP-2018-8digit-202512.xlsx" \
+            -o source_data/EXCEL-CPI-COICOP-2018-8digit-202512.xlsx
+          
+          echo "File 2 size: $(wc -c < source_data/EXCEL-CPI-COICOP-2018-8digit-202512.xlsx) bytes"
+
+      - name: Commit and push files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add source_data/CPI_Average-Prices_All-urban-202512.xlsx
+          git add source_data/EXCEL-CPI-COICOP-2018-8digit-202512.xlsx
+          git status
+          git diff --staged --stat
+          git commit -m "Add CPI_Average-Prices_All-urban-202512.xlsx and EXCEL-CPI-COICOP-2018-8digit-202512.xlsx"
+          git push
