@@ -20,9 +20,9 @@ jobs:
       - name: Download binary files from sandbox
         run: |
           mkdir -p source_data
-          curl -fL "https://9001-i411j0yk56ztcf3lfva74.e2b.app/food_price_indices_data_feb-2.xlsx" -o "source_data/food_price_indices_data_feb-2.xlsx"
-          curl -fL "https://9001-i411j0yk56ztcf3lfva74.e2b.app/pmbejd_affordability_2025-2.xlsx" -o "source_data/pmbejd_affordability_2025-2.xlsx"
-          curl -fL "https://9001-i411j0yk56ztcf3lfva74.e2b.app/pmbejd_affordability_extended.xlsx" -o "source_data/pmbejd_affordability_extended.xlsx"
+          curl -fL "https://3000-i411j0yk56ztcf3lfva74.e2b.app/food_price_indices_data_feb-2.xlsx" -o "source_data/food_price_indices_data_feb-2.xlsx"
+          curl -fL "https://3000-i411j0yk56ztcf3lfva74.e2b.app/pmbejd_affordability_2025-2.xlsx" -o "source_data/pmbejd_affordability_2025-2.xlsx"
+          curl -fL "https://3000-i411j0yk56ztcf3lfva74.e2b.app/pmbejd_affordability_extended.xlsx" -o "source_data/pmbejd_affordability_extended.xlsx"
 
       - name: Verify file sizes
         run: |
