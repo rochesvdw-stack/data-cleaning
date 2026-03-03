@@ -1,0 +1,376 @@
+{
+  "zero_rated": {
+    "1113102": [
+      "Brown bread",
+      "always"
+    ],
+    "1112601": [
+      "Maize meal",
+      "always"
+    ],
+    "1111201": [
+      "White Rice",
+      "always"
+    ],
+    "1111202": [
+      "Basmati rice",
+      "always"
+    ],
+    "1112602": [
+      "Samp",
+      "always"
+    ],
+    "1112301": [
+      "Sorghum meal",
+      "always"
+    ],
+    "1176101": [
+      "Beans - dried",
+      "always"
+    ],
+    "1132902": [
+      "Fish (excluding tuna) - canned",
+      "always"
+    ],
+    "1141101": [
+      "Full cream milk - fresh",
+      "always"
+    ],
+    "1141102": [
+      "Full cream milk - longlife",
+      "always"
+    ],
+    "1142001": [
+      "Low fat milk - fresh",
+      "always"
+    ],
+    "1142002": [
+      "Low fat milk - longlife",
+      "always"
+    ],
+    "1146003": [
+      "Sour milk",
+      "always"
+    ],
+    "1143201": [
+      "Powdered milk",
+      "always"
+    ],
+    "1148101": [
+      "Eggs",
+      "always"
+    ],
+    "1151101": [
+      "Sunflower-seed  oil (cooking oil)",
+      "always"
+    ],
+    "1163101": [
+      "Apples - fresh",
+      "always"
+    ],
+    "1161201": [
+      "Bananas - fresh",
+      "always"
+    ],
+    "1165999": [
+      "Seasonal fruit",
+      "always"
+    ],
+    "1113101": [
+      "White bread",
+      "post_april_2018"
+    ],
+    "1112102": [
+      "Bread flour",
+      "post_april_2019"
+    ],
+    "1112101": [
+      "Cake flour",
+      "post_april_2019"
+    ],
+    "1175101": [
+      "Potatoes - fresh",
+      "always"
+    ],
+    "1174301": [
+      "Onions  - fresh",
+      "always"
+    ],
+    "1172401": [
+      "Tomatoes - fresh",
+      "always"
+    ]
+  },
+  "nutrient_dense_codes": [
+    1111201,
+    1111202,
+    1112301,
+    1112601,
+    1112602,
+    1113102,
+    1114002,
+    1122101,
+    1122102,
+    1122103,
+    1122299,
+    1122399,
+    1122401,
+    1122402,
+    1122403,
+    1122404,
+    1124001,
+    1124002,
+    1124003,
+    1124004,
+    1131401,
+    1132901,
+    1132902,
+    1134101,
+    1141101,
+    1141102,
+    1142001,
+    1142002,
+    1143201,
+    1145001,
+    1145002,
+    1145003,
+    1145004,
+    1145005,
+    1146001,
+    1146002,
+    1146003,
+    1148101,
+    1161201,
+    1163101,
+    1165999,
+    1171201,
+    1171401,
+    1171501,
+    1172101,
+    1172201,
+    1172401,
+    1172501,
+    1174101,
+    1174301,
+    1174501,
+    1174901,
+    1175101,
+    1175201,
+    1176101,
+    1178001,
+    1179202,
+    1192101,
+    1192201,
+    1230201,
+    1230901
+  ],
+  "energy_dense_codes": [
+    1112101,
+    1112102,
+    1113101,
+    1113103,
+    1113104,
+    1113105,
+    1113901,
+    1113903,
+    1114001,
+    1115001,
+    1115002,
+    1115004,
+    1123101,
+    1123201,
+    1123202,
+    1125101,
+    1125102,
+    1125103,
+    1125104,
+    1125105,
+    1125201,
+    1125901,
+    1125902,
+    1133901,
+    1133902,
+    1143202,
+    1147001,
+    1147002,
+    1151101,
+    1151301,
+    1152101,
+    1153001,
+    1153002,
+    1169401,
+    1169901,
+    1174201,
+    1179901,
+    1179902,
+    1181101,
+    1181102,
+    1183101,
+    1183901,
+    1184001,
+    1185101,
+    1185102,
+    1186001,
+    1189901,
+    1189902,
+    1191301,
+    1191401,
+    1191901,
+    1192301,
+    1193101,
+    1193901,
+    1193902,
+    1193903,
+    1193904,
+    1193905,
+    1194001,
+    1194002,
+    1194003,
+    1199001,
+    1199002,
+    1199004,
+    1199011,
+    1210001,
+    1210002,
+    1220101,
+    1220102,
+    1250001,
+    1260001,
+    1260002,
+    1290001
+  ],
+  "cumulative_inflation": {
+    "Food_All": 388.54533479797226,
+    "Zero_Rated": 262.05295705332384,
+    "Standard_Rated": 503.9157593893252,
+    "Nutrient_Dense": 469.22339453477565,
+    "Energy_Dense": 307.4426068112751,
+    "ZR_Nutrient_Dense": 295.19508912557745,
+    "ZR_Energy_Dense": 185.2851513185986,
+    "SR_Nutrient_Dense": 814.0599983905915,
+    "SR_Energy_Dense": 356.9582842885005
+  },
+  "volatility": {
+    "Food_All": 2.552998545504618,
+    "Zero_Rated": 1.7913079505250373,
+    "Standard_Rated": 3.954259923512074,
+    "Nutrient_Dense": 4.037189283813081,
+    "Energy_Dense": 1.629736429661809,
+    "ZR_Nutrient_Dense": 2.359865813371423,
+    "ZR_Energy_Dense": 1.5118678689068552,
+    "SR_Nutrient_Dense": 9.631733207619122,
+    "SR_Energy_Dense": 2.1087992850259183
+  },
+  "pre_post_2018": {
+    "Food_All": {
+      "pre_mean": 0.9471189887946475,
+      "pre_vol": 3.210633836355154,
+      "post_mean": 0.5961244105401406,
+      "post_vol": 0.9643502499424232
+    },
+    "Zero_Rated": {
+      "pre_mean": 0.5955585967774181,
+      "pre_vol": 1.6671297214509404,
+      "post_mean": 0.7163741410236688,
+      "post_vol": 1.9679538655376518
+    },
+    "Standard_Rated": {
+      "pre_mean": 1.2159271963508678,
+      "pre_vol": 5.061414725374942,
+      "post_mean": 0.5407883128648393,
+      "post_vol": 0.907259868124258
+    },
+    "Nutrient_Dense": {
+      "pre_mean": 1.1440708340490038,
+      "pre_vol": 5.132323669862678,
+      "post_mean": 0.5808818643444177,
+      "post_vol": 1.220143538827579
+    },
+    "Energy_Dense": {
+      "pre_mean": 0.7517394010156592,
+      "pre_vol": 1.9001983865933196,
+      "post_mean": 0.623078557143742,
+      "post_vol": 1.126799042376686
+    },
+    "ZR_Nutrient_Dense": {
+      "pre_mean": 0.6364551842777758,
+      "pre_vol": 2.15343566865648,
+      "post_mean": 0.7873631002761903,
+      "post_vol": 2.6453659584559586
+    },
+    "ZR_Energy_Dense": {
+      "pre_mean": 0.5128235394099605,
+      "pre_vol": 1.5502909528498923,
+      "post_mean": 0.5399012876636277,
+      "post_vol": 1.4627238416918156
+    },
+    "SR_Nutrient_Dense": {
+      "pre_mean": 1.9668015506118495,
+      "pre_vol": 12.455633381582393,
+      "post_mean": 0.4389084152799349,
+      "post_vol": 0.6766856998723769
+    },
+    "SR_Energy_Dense": {
+      "pre_mean": 0.8411329247574862,
+      "pre_vol": 2.494275493607762,
+      "post_mean": 0.6488678069082128,
+      "post_vol": 1.3640794710477298
+    }
+  },
+  "summary_statistics": {
+    "Food_All": {
+      "n": 134,
+      "mean_inflation": 0.54,
+      "cumulative_inflation": 199.7,
+      "volatility": 0.763
+    },
+    "Zero_Rated": {
+      "n": 25,
+      "mean_inflation": 0.53,
+      "cumulative_inflation": 191.6,
+      "volatility": 1.156
+    },
+    "Standard_Rated": {
+      "n": 109,
+      "mean_inflation": 0.551,
+      "cumulative_inflation": 207.2,
+      "volatility": 0.619
+    },
+    "Nutrient_Dense": {
+      "n": 61,
+      "mean_inflation": 0.534,
+      "cumulative_inflation": 194.5,
+      "volatility": 1.09
+    },
+    "Energy_Dense": {
+      "n": 73,
+      "mean_inflation": 0.547,
+      "cumulative_inflation": 204.7,
+      "volatility": 0.67
+    },
+    "ZR_ND": {
+      "n": 21,
+      "mean_inflation": 0.536,
+      "cumulative_inflation": 194.0,
+      "volatility": 1.364
+    },
+    "ZR_ED": {
+      "n": 4,
+      "mean_inflation": 0.524,
+      "cumulative_inflation": 185.3,
+      "volatility": 1.512
+    },
+    "SR_ND": {
+      "n": 40,
+      "mean_inflation": 0.535,
+      "cumulative_inflation": 196.1,
+      "volatility": 0.935
+    },
+    "SR_ED": {
+      "n": 69,
+      "mean_inflation": 0.559,
+      "cumulative_inflation": 212.4,
+      "volatility": 0.579
+    }
+  }
+}
