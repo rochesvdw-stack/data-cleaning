@@ -1,6 +1,9 @@
 name: Fix Binary Files
 
 on:
+  push:
+    paths:
+      - '.github/workflows/fix_binary_files.yml'
   workflow_dispatch:
 
 jobs:
